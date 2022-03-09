@@ -1,0 +1,12 @@
+create table examhalltickets163(htno number(10)primary key,studentname varchar(20),examcenter varchar(20),regid number(5),foreign key(regid) REFERENCES university(regid)); 
+
+desc examhalltickets;
+
+
+insert into examhalltickets values(101,'jagadesh','adcamp',101);
+insert into examhalltickets values(102,'ravi','adcamp',102);
+insert into examhalltickets values(103,'kamala','adcamp',103);
+insert into examhalltickets values(104,'raja','adcamp',104);
+insert into examhalltickets values(105,'rama','adcamp',105);
+
+select *from examhalltickets;
