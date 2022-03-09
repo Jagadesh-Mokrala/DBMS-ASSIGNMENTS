@@ -1,4 +1,4 @@
-create table examhalltickets163(htno number(10)primary key,studentname varchar(20),examcenter varchar(20),regid number(5),foreign key(regid) REFERENCES university(regid)); 
+create table examhalltickets(htno number(10)primary key,studentname varchar(20),examcenter varchar(20),regid number(5),foreign key(regid) REFERENCES university(regid)); 
 
 desc examhalltickets;
 
