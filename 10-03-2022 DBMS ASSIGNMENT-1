@@ -1,0 +1,22 @@
+1. Create a employee table with eno,ename,design,salary.
+Write query to grant priveleges on employee from present database user to  another database user.
+
+SQL>connect jagadesh1/jaga1;
+Connected.
+
+create table employee(eno number(10),ename char(20),design char(20),salary number(10));
+
+Table created.
+
+SQL> desc employee;
+ Name        		         					  Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ENO                                                NUMBER(10)
+ ENAME                                              CHAR(20)
+ DESIGN                                             CHAR(20)
+ SALARY                                             NUMBER(10)
+
+
+SQL> grant all on employee to jagadesh2;
+
+Grant succeeded.
