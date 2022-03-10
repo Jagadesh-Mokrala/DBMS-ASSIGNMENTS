@@ -1,0 +1,74 @@
+Insert 5 employees data from another db account.
+Write queries to involve commit,rollback and savepoint on above table.
+
+SQL> connect jagadesh2/jaga2;
+Connected.
+
+SQL> insert into jagadesh1.employee values(101,'jagadesh','developer',60000);
+
+1 row created.
+
+SQL> insert into jagadesh1.employee values(102,'kittu','developer',25000);
+
+1 row created.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> insert into jagadesh1.employee values(103,'anvesh','developer',15000);
+
+1 row created.
+
+SQL> savepoint jagadesh;
+
+Savepoint created.
+
+SQL> select *from jagadesh1.employee;
+
+       ENO 	ENAME			    DESIGN        SALARY
+    ---------------------------------------------------
+       101 	jagadesh	   developer      60000
+
+       102 	kittu		     developer      25000
+
+       103 	anvesh		   developer  	  15000
+
+
+SQL> insert into jagadesh1.employee values(104,'ganesh','developer',30000);
+
+1 row created.
+
+SQL> insert into jagadesh1.employee values(105,'prasad','developer',40000);
+
+1 row created.
+
+SQL> select *from jagadesh1.employee;
+
+		ENO		  ENAME           DESIGN			  SALARY
+    ---------------------------------------------------
+     101 	  jagadesh	    developer        60000
+
+     102 	  kittu		      developer        25000
+
+     103 	  anvesh		    developer  	     15000
+
+		 104		ganesh			  developer		     30000
+		
+		 105		prasad			  developer		     40000
+
+
+SQL> rollback to jagadesh;
+
+Rollback complete.
+
+SQL> select *from jagadesh1.employee;
+
+      
+		ENO		  ENAME			    DESIGN			SALARY
+    ---------------------------------------------------
+       101 	jagadesh	   developer      60000
+
+       102 	kittu		     developer      25000
+
+       103 	anvesh		   developer  	  15000
