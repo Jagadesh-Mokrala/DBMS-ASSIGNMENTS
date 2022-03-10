@@ -9,7 +9,7 @@ create table employee(eno number(10),ename char(20),design char(20),salary numbe
 Table created.
 
 SQL> desc employee;
- Name        		         					  Null?    Type
+ Name        		         					                Null?    Type
  ----------------------------------------- -------- ----------------------------
  ENO                                                NUMBER(10)
  ENAME                                              CHAR(20)
