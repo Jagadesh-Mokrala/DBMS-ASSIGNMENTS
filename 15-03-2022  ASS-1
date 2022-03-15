@@ -1,0 +1,11 @@
+create table apsrtc(Serviceno number(10)primary key,Servicetype varchar(20),startfrom varchar(10),endto varchar(10),Kms number(10),Ticketprice number(10));
+
+desc apsrtc;
+
+Table	      Column	    Data Type	  Length	Precision	Scale	Primary Key	  Nullable	Default	Comment
+APSRTC	  SERVICENO	      Number	    - 	    10	      0	      1	          - 	      - 	      -
+ 	        SERVICETYPE	    Varchar2	  20	    - 	      - 	    - 	      nullable	    - 	      -
+ 	        STARTFROM	      Varchar2	  10	    - 	      - 	    - 	      nullable	    - 	      -
+ 	        ENDTO	          Varchar2	  10	    - 	      - 	    - 	      nullable	    - 	      -
+ 	        KMS	            Number	    - 	    10	      0	      - 	      nullable	     - 	      -
+ 	        TICKETPRICE	    Number	    - 	    10	      0	      - 	      nullable	      - 	    - 
