@@ -1,0 +1,47 @@
+insert into apsrtc values(2564,'luxury','vskp','hyd',550,600);
+insert into apsrtc values(2561,'luxury','vskp','rjy',450,400);
+insert into apsrtc values(2563,'passenger','vskp','sklm',150,200);
+insert into apsrtc values(2613,'express','hyd','vskp',550,300);
+insert into apsrtc values(2616,'passenger','rjy','kkd',100,90);
+insert into apsrtc values(2819,'passenger','amp','kkd',70,80);
+insert into apsrtc values(2758,'passenger','amp','rjy',70,80);
+insert into apsrtc values(2657,'luxury','amp','vja',200,300);
+insert into apsrtc values(2917,'luxury','vja','vskp',500,350);
+insert into apsrtc values(2312,'express','vskp','amp',300,350);
+
+select *from apsrtc;
+
+SERVICENO	SERVICETYPE	STARTFROM	ENDTO	  KMS	  TICKETPRICE
+2564	      luxury	    vskp	    hyd	  550	    600
+2561	      luxury	    vskp	    rjy	  450	    400
+2563	    passenger	    vskp	    sklm	150	    200
+2613	    express	      hyd	      vskp	550	    300
+2616	    passenger	    rjy	      kkd	  100	    90
+2819	    passenger	    amp	      kkd	  70	    80
+2758	    passenger	    amp	      rjy	  70	    80
+2657	    luxury	      amp	      vja	  200	    300
+2917	    luxury	      vja	      vskp	510   	750
+2312	    express	      vskp	     amp 	300	    350
+
+
+update apsrtc set ticketprice=100 where kms>500; 
+update apsrtc set ticketprice=50 where kms<500; 
+
+SERVICENO	SERVICETYPE	STARTFROM	ENDTO	  KMS	TICKETPRICE
+2564	      luxury	    vskp	    hyd	  550	  100
+2561	      luxury	    vskp	    rjy	  450	  50
+2563	      passenger	  vskp	    sklm	150	  50
+2613	      express   	hyd	      vskp	550	  100
+2616	      passenger	  rjy	      kkd	  100	  50
+2819	      passenger	  amp	      kkd	  70	  50
+2758	      passenger	  amp	      rjy	  70	  50
+2657	      luxury	    amp	      vja	  200	  50
+2917	      luxury	    vja	      vskp	510	  100
+2312	      express	    vskp	    amp	  300	  50
+
+select *from apsrtc where startfrom='vskp' and endto='hyd';
+
+select *from apsrtc;
+
+
+
