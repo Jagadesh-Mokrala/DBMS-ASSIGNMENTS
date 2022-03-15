@@ -1,0 +1,40 @@
+SQL> insert into jobreg values(12,'jagadesh','male','Btech',25);
+
+1 row created.
+
+SQL> insert into jobreg values(23,'anvesh','male','degree',19);
+insert into jobreg values(23,'anvesh','male','degree',19)
+ERROR at line 1:
+ORA-02290: check constraint (SYSTEM.SYS_C004263) violated
+
+
+SQL> insert into jobreg values(23,'anvesh','male','degree',31);
+insert into jobreg values(23,'anvesh','male','degree',31)
+*
+ERROR at line 1:
+ORA-02290: check constraint (SYSTEM.SYS_C004263) violated
+
+
+SQL> insert into jobreg values(34,'rajesh','male','inter',30);
+
+1 row created.
+
+SQL> insert into jobreg values(23,'kamala','female','inter',25);
+
+1 row created.
+
+SQL> insert into jobreg values(56,'patro','male','btech',23);
+
+1 row created.
+
+SQL> insert into jobreg values(78,'harsha','male','degree',28);
+
+1 row created.
+SQL> select *from jobreg where gender='male';
+
+     REDNO CANDNAME             GENDER     QUALIFICAT        AGE
+---------- -------------------- ---------- ---------- ----------
+        12 jagadesh             male       Btech              25
+        34 rajesh               male       inter              30
+        56 patro                male       btech              23
+        78 harsha               male       degree             28
