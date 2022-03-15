@@ -1,0 +1,12 @@
+CREATE JOB REGISTRATION TABLE WITH FOLLOWING DATA
+
+SOLUTION:
+SQL> connect system/aditya;
+Connected.
+SQL> Create table jobreg(redno int,
+  2  candname varchar(20),
+  3  gender varchar(10),
+  4  qualification varchar (10),
+  5  age int check(age>=20 and age<=30));
+Table created.
+
