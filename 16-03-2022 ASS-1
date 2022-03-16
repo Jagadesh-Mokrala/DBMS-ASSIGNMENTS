@@ -1,0 +1,50 @@
+Assignment-1:
+create a restaurant table with the following fields.
+billid
+custname
+phno
+amount
+and insert 10 details(bill id starts from  100001 with sequence)
+
+SOLUTION:
+
+create table restaurant(billid int,custname varchar(20),phno number(10),amount int);
+Table created.
+
+desc restaurant;
+
+Table	      Column	  Data Type	    Length	    Precision	  Scale	  Primary Key	  Nullable	Default	  Comment
+RESTAURANT	BILLID	    Number	      - 	        - 	        0	        - 	      nullable	    - 	      -
+          	CUSTNAME	  Varchar2    	20	        - 	        - 	      - 	      nullable	    - 	      -
+ 	          PHNO	      Number	      - 	        -         	0	        - 	      nullable	    - 	      -
+ 	          AMOUNT	    Number	      - 	        - 	        0	        - 	      nullable	     - 	      - 
+            
+            
+ create sequence restaurant_items start with 100001 increment by 1 minvalue 100001 maxvalue 100900 cycle;
+ sequence created.
+
+insert into restaurant values(restaurant_items.nextval,'jagadesh',12345670,150);
+insert into restaurant values(restaurant_items.nextval,'anvesh',123456,450);
+insert into restaurant values(restaurant_items.nextval,'raju',12390,650);
+insert into restaurant values(restaurant_items.nextval,'ravi',67890,250);
+insert into restaurant values(restaurant_items.nextval,'mahesh',12567890,250);
+insert into restaurant values(restaurant_items.nextval,'pavan',123890,450);
+insert into restaurant values(restaurant_items.nextval,'uday',123490,650);
+insert into restaurant values(restaurant_items.nextval,'java',167890,850);
+insert into restaurant values(restaurant_items.nextval,'sandeep',10890,1050);
+insert into restaurant values(restaurant_items.nextval,'raghu',0234560,200);
+
+
+select *from restaurant;
+
+BILLID	CUSTNAME	    PHNO	      AMOUNT
+100001	jagadesh	   12345670	      150
+100002	anvesh	      123456	      450
+100003	raju	        12390	        650
+100004	ravi	        67890	        250
+100005	mahesh	      12567890	    250
+100006	pavan	         123890	      450
+100007	uday	          123490	    650
+100008	manikanta	      167890	    850
+100009	sandeep	        10890	      1050
+100010	raghu	          234560	    200
