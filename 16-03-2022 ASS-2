@@ -1,0 +1,26 @@
+Assignment-2:
+->  retrieve the data for those who names are started with 'J'
+->  Arrange the retranunt table data in descender order.
+
+Solution:
+
+select *from restaurant where custname like 'j%';
+
+BILLID	CUSTNAME	  PHNO	    AMOUNT
+100001	jagadesh	1234567890	  150
+100008	java	      167890	    850
+
+-----------------------------------------------------------
+select *from restaurant order by billid desc;
+
+BILLID	CUSTNAME	  PHNO	AMOUNT
+100010	raghu	234560	200
+100009	sandeep	10890	1050
+100008	java	167890	850
+100007	uday	123490	650
+100006	pavan	123890	450
+100005	mahesh	12567890	250
+100004	ravi	67890	250
+100003	raju	12390	650
+100002	anvesh	123456	450
+100001	jagadesh	1234567890	150
