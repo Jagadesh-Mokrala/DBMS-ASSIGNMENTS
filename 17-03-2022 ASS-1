@@ -1,0 +1,70 @@
+Create a student table with the following Fields.
+Regno,sname, group,email-id,phno.
+And Exam table with Regno,S1, S2, S3,total,avg.
+And insert 10 students data.
+
+create table student(regno number(10),sname varchar2(20),sgroup varchar2(15),emailid varchar2(20),phno number(10));
+
+insert into student values(101,'jagadesh','cse','jagadesh@gmail.com',1234567890);
+insert into student values(102,'pavan','ece','pavan@gmail.com',1234);
+insert into student values(103,'sandeep','ece','sandeep@gmail.com',12340);
+insert into student values(104,'mahesh','cse','mahesh@gmail.com',4567890);
+insert into student values(105,'ck','eee','ck@gmail.com',567890);
+insert into student values(106,'kalyan','cse','kalyan@gmail.com',123450);
+insert into student values(107,'uday','mech','uday@gmail.com',156590);
+insert into student values(108,'manikanta','cse','manikanta@gmail.com',5678290);
+insert into student values(109,'praveen','ece','praveen@gmail.com',4578464);
+insert into student values(110,'aditya','cse','aditya@gmail.com',59877565);
+
+select *from student;
+
+REGNO	SNAME	SGROUP	EMAILID	PHNO
+101	jagadesh	cse	jagadesh@gmail.com	1234567890
+101	jagadesh	cse	jagadesh@gmail.com	1234567890
+102	pavan	ece	pavan@gmail.com	1234
+103	sandeep	ece	sandeep@gmail.com	12340
+104	mahesh	cse	mahesh@gmail.com	4567890
+105	ck	eee	ck@gmail.com	567890
+106	kalyan	cse	kalyan@gmail.com	123450
+107	uday	mech	uday@gmail.com	156590
+108	manikanta	cse	manikanta@gmail.com	5678290
+109	praveen	ece	praveen@gmail.com	4578464
+
+
+insert into exam values(101,95,85,95,0,0);
+
+insert into exam values(102,85,75,90,0,0);
+
+insert into exam values(103,70,75,65,0,0);
+
+insert into exam values(104,90,75,80,0,0);
+
+insert into exam values(105,95,70,70,0,0);
+
+insert into exam values(106,60,75,60,0,0);
+
+insert into exam values(107,70,75,80,0,0);
+
+insert into exam values(108,85,65,75,0,0);
+
+insert into exam values(109,50,60,80,0,0);
+
+insert into exam values(110,69,85,70,0,0);
+
+update exam set total=s1+s2+s3;
+
+update exam set avg=total/3;
+
+select *from exam;
+
+REGNO	S1	S2	S3	TOTAL	AVG
+101	95	85	95	275	92
+102	85	75	90	250	83
+103	70	75	65	210	70
+104	90	75	80	245	82
+105	95	70	70	235	78
+106	60	75	60	195	65
+107	70	75	80	225	75
+108	85	65	75	225	75
+109	50	60	80	190	63
+110	69	85	70	224	75
