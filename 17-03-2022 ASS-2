@@ -1,0 +1,18 @@
+Create view with name of Result(Regno,Sname,group,S1, S2,S3,Total,Avg).
+And retrieve the Result details
+
+create view result as select student.regno,student.sname,student.group,exam.s1,exam.s2,exam.s3,exam.total,exam.avg from student,exam;
+
+select *from result;
+
+REGNO	SNAME	SGROUP	S1	S2	S3	TOTAL	AVG
+101	jagadesh	cse	95	85	95	275	92
+102	pavan	ece	95	85	95	275	92
+103	sandeep	ece	95	85	95	275	92
+104	mahesh	cse	95	85	95	275	92
+105	ck	eee	95	85	95	275	92
+106	kalyan	cse	95	85	95	275	92
+107	uday	mech	95	85	95	275	92
+108	manikanta	cse	95	85	95	275	92
+109	praveen	ece	95	85	95	275	92
+110 aditya  cse 69  85  70   224  74
