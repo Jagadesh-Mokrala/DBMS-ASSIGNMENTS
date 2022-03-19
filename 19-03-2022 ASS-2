@@ -1,0 +1,68 @@
+create table emp(empid number(10),empname varchar(10),empsal number(10),empphno number(10));
+Table created.
+desc emp;
+ 
+insert into emp values(101,'jagadesh',10000,789456123);
+insert into emp values(102,'pavan',12000,9456123);
+insert into emp values(103,'uday',20000,789456145);
+insert into emp values(104,'kiran',9000,235656123);
+insert into emp values(105,'chaitanya',10000,23456123);
+insert into emp values(106,'ck',8900,12456123);
+
+select *from emp;
+EMPID	 EMPNAME	 EMPSAL	EMPPHNO
+101	jagadesh	10000	789456123
+102	pavan	12000	9456123
+103	uday	20000	789456145
+104	kiran	9000	235656123
+105	chaitanya	10000	23456123
+106	ck	8900	12456123
+
+create table emp1(empid number(10),empname varchar(10),empsal number(10),empphno number(10));
+insert into emp1 values(110,'venkat',15000,4561235);
+insert into emp1 values(111,'mahesh',20000,1245563);
+insert into emp1 values(112,'krishna',13000,4523145);
+insert into emp1 values(113,'manikanta',10000,7568945);
+insert into emp1 values(114,'suresh',12000,23355336);
+insert into emp1 values(106,'ck',8900,12456123);
+select *from emp1;
+EMPID	   EMPNAME	      EMPSAL	        EMPPHNO
+110	      venkat	       15000	       4561235
+111	      mahesh	       20000	       1245563
+112	      krishna	       13000	       4523145
+113	      manikanta	       10000	       7568945
+114	      suresh	       12000	       23355336
+106	      ck	        8900	       12456123
+
+			
+select *from emp union select *from emp1;
+
+EMPID	  EMPNAME	   EMPSAL      EMPPHNO
+101	jagadesh	      10000	    789456123
+102	pavan	          12000	    9456123
+103	uday	          20000	    789456145
+104	kiran	          9000	    235656123
+105	chaitanya	      10000	    23456123
+106	ck	            8900	    12456123
+110	venkat	        15000	     4561235
+111	mahesh	        20000	     1245563
+112	krishna	        13000	      4523145
+113	manikanta	      10000	      7568945
+114  suresh         12000       23355336
+
+
+select *from emp intersect select *from emp1;
+
+EMPID	   EMPNAME	    EMPSAL	    EMPPHNO
+106        	ck	       8900	     12456123
+
+
+select *from emp minus select *from emp1;
+
+EMPID	   EMPNAME	    EMPSAL	     EMPPHNO
+101	jagadesh	        10000	      789456123
+102	pavan	            12000	      9456123
+103	uday	            20000	      789456145
+104	kiran	            9000	      235656123
+105	chaitanya	        10000	      23456123
+
