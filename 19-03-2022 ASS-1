@@ -1,0 +1,46 @@
+create table shopping_mall(billid number(10),custname varchar(10),phno number(10),billamount number(10));
+Table created.
+
+desc shopping_mall;
+ 
+
+insert into shopping_mall values(789,'jagadesh',123456,500);
+insert into shopping_mall values(564,'pavan',453456,450);
+insert into shopping_mall values(235,'uday',23456,600);
+insert into shopping_mall values(532,'mahesh',223456,300);
+insert into shopping_mall values(745,'ck',4553456,750);
+insert into shopping_mall values(986,'sandeep',783456,800);
+insert into shopping_mall values(326,'praveen',213566,450);
+insert into shopping_mall values(357,'harsha',752354,500);
+
+select *from shopping_mall;
+
+BILLID	CUSTNAME	PHNO	BILLAMOUNT
+789	jagadesh	123456	500
+564	pavan	453456	450
+235	uday	23456	600
+532	mahesh	223456	300
+745	ck	4553456	750
+986	sandeep	783456	800
+326	praveen	213566	450
+357	harsha	752354	500
+
+select sum(billamount) from shopping_mall;
+SUM(BILLAMOUNT)
+4350
+
+select max(billamount) from shopping_mall;
+MAX(BILLAMOUNT)
+800
+
+select min(billamount) from shopping_mall;
+MIN(BILLAMOUNT)
+300
+
+select avg(billamount) from shopping_mall;
+AVG(BILLAMOUNT)
+543.75
+
+select count(*) from shopping_mall;
+COUNT(*)
+8
