@@ -1,0 +1,27 @@
+create table employee(empno int,empname varchar(20),empdesig varchar(20),empsal int);
+Table created.
+
+
+insert into employee values(1,'jagadesh','developer',60000);
+insert into employee values(2,'ganesh','designer',20000);
+insert into employee values(3,'mahesh','developer',45000);
+insert into employee values(4,'pavan','developer',50000);
+insert into employee values(5,'harsha','designer',20000);
+insert into employee values(6,'anvesh','developer',54000);
+insert into employee values(7,'suresh','developer',40000);
+insert into employee values(8,'uday','designer',15000);
+insert into employee values(9,'sankar','developer',30000);
+insert into employee values(10,'ram','developer',40000);
+
+select *from employee;
+EMPNO	EMPNAME		EMPDESIG	EMPSAL
+1	jagadesh	developer	60000
+2	ganesh	designer	20000
+3	mahesh	developer	45000
+4	pavan	developer	50000
+5	harsha	designer	20000
+6	anvesh	developer	54000
+7	suresh	developer	40000
+8	uday	designer	15000
+9	sankar	developer	30000
+10	ram	developer	40000
