@@ -1,0 +1,103 @@
+update salary:
+
+SQL> set serveroutput on;
+SQL> declare
+     a int;
+     begin
+     update employee set empsal=empsal+3000 where empsal>30000;
+     if sql%notfound then
+     dbms_output.put_line('no details found');
+     elsif sql%found then
+     a:=sql%rowcount;
+     dbms_output.put_line(a|| 'salary records updated');
+     end if;
+     end;
+     /
+ 6 salary records updated.
+
+PL/SQL procedure successfully completed.
+
+SQL> select *from employee;
+
+     EMPNO EMPNAME
+---------- ------------------------------------------------------------
+EMPDESIG                                                         EMPSAL
+------------------------------------------------------------ ----------
+         1 jagadesh
+developer                                                         63000
+
+         2 ganesh
+designer                                                          20000
+
+         3 mahesh
+developer                                                         48000
+
+
+     EMPNO EMPNAME
+---------- ------------------------------------------------------------
+EMPDESIG                                                         EMPSAL
+------------------------------------------------------------ ----------
+         4 pavan
+developer                                                         53000
+
+         5 harsha
+designer                                                          20000
+
+         6 anvesh
+developer                                                         57000
+
+
+     EMPNO EMPNAME
+---------- ------------------------------------------------------------
+EMPDESIG                                                         EMPSAL
+------------------------------------------------------------ ----------
+         7 suresh
+developer                                                         43000
+
+         8 uday
+designer                                                          15000
+
+         9 sankar
+developer                                                         30000
+
+
+     EMPNO EMPNAME
+---------- ------------------------------------------------------------
+EMPDESIG                                                         EMPSAL
+------------------------------------------------------------ ----------
+        10 ram
+developer                                                         43000
+
+
+10 rows selected.
+--------------------------------------------------------------
+display data:
+
+SQL> set serveroutput on;
+SQL> declare
+  2   Eno int;
+  3   Ename varchar(20);
+  4   Esal int;
+  5   cursor emplo is select empno,empname,empsal from employee;
+  6   begin
+  7   open emplo;
+  8   loop
+  9   fetch emplo into Eno,Ename,Esal;
+ 10   exit when emplo%notfound;
+ 11   dbms_output.put_line(Eno||'     '||Ename||'    '||Esal);
+ 12   end loop;
+ 13   close emplo;
+ 14   end;
+ 15  /
+1     jagadesh    63000
+2     ganesh    20000
+3     mahesh    48000
+4     pavan    53000
+5     harsha    20000
+6     anvesh    57000
+7     suresh    43000
+8     uday    15000
+9     sankar    30000
+10     ram    43000
+
+PL/SQL procedure successfully completed.
