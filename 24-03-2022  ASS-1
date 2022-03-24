@@ -1,0 +1,102 @@
+SQL> connect system/jagadesh;
+Connected.
+SQL> create table employee(eno int,ename varchar(20),desig varchar(20),dob date,doj date,salary int);
+
+Table created.
+
+SQL> insert into employee values(101,'jagadesh','developer','21-Aug-1995','01-Nov-2019',12000);
+
+1 row created.
+
+SQL> insert into employee values(102,'mahesh','developer','21-Dec-1998','10-Nov-2021',10000);
+
+1 row created.
+
+SQL> insert into employee values(103,'ram','developer','01-Jun-2000','10-Aug-2020',9000);
+
+1 row created.
+
+SQL> insert into employee values(104,'sai','developer','25-Jul-1994','05-Jun-2021',9000);
+
+1 row created.
+
+SQL> insert into employee values(105,'surya','developer','10-Jan-1989','10-Jun-2017',10000);
+
+1 row created.
+
+SQL> select *from employee;
+
+       ENO ENAME
+---------- ------------------------------------------------------------
+DESIG                                                        DOB
+------------------------------------------------------------ ------------------
+DOJ                    SALARY
+------------------ ----------
+       101 jagadesh
+developer                                                    21-AUG-95
+01-NOV-19               12000
+
+       102 mahesh
+developer                                                    21-DEC-98
+10-NOV-21               10000
+
+       
+       103 ram
+developer                                                    01-JUN-00
+10-AUG-20                9000
+
+       104 sai
+developer                                                    25-JUL-94
+
+
+05-JUN-21                9000
+
+       105 surya
+developer                                                    10-JAN-89
+10-JUN-17               10000
+
+
+SQL> select eno,ename,trunc((sysdate-to_date(dob))/365.25,0)as age from employee;
+
+       ENO ENAME
+---------- ------------------------------------------------------------
+ AGE
+----------
+       101 jagadesh
+        26
+
+       102 mahesh
+        23
+
+       103 ram
+        21
+
+       104 sai
+        27
+
+       105 surya
+        33
+
+
+SQL> select eno,ename,trunc((sysdate-to_date(doj))/365.25,0)as experience from employee;
+
+       ENO ENAME
+---------- ------------------------------------------------------------
+EXPERIENCE
+----------
+       101 jagadesh
+         2
+
+       102 mahesh
+         0
+
+       103 ram
+         1
+
+       104 sai
+         0
+
+       105 surya
+         4
+
+
