@@ -1,0 +1,49 @@
+SQL> set serveroutput on;
+SQL> create trigger empsal
+  2  before update on employee
+  3  for each row
+  4  when(NEW.ENO>1)
+  5  declare
+  6  esal int;
+  7  begin
+  8  esal:= :NEW.salary-:OLD.salary;
+  9  dbms_output.put_line('old salary:'||:OLD.salary);
+ 10  dbms_output.put_line('new salary:'||:NEW.salary);
+ 11  dbms_output.put_line('updated salary:'||esal);
+ 12  end;
+ 16  /
+
+Trigger created.
+
+SQL> declare
+  2  sal int;
+  3  begin
+  4  update employee set salary=salary+2000;
+  5  if sql%notfound then
+  6  dbms_output.put_line('salary not update');
+  7  elsif sql%found then
+  8  sal:=sql%rowcount;
+  9  dbms_output.put_line(sal||'salary updated');
+ 10  end if;
+ 11  end;
+ 12  /
+old salary:12000
+new salary:14000
+updated salary:2000
+old salary:10000
+new salary:12000
+updated salary:2000
+old salary:9000
+new salary:11000
+updated salary:2000
+old salary:9000
+new salary:11000
+updated salary:2000
+old salary:10000
+new salary:12000
+updated salary:2000
+5salary updated
+
+PL/SQL procedure successfully completed.
+
+SQL>
