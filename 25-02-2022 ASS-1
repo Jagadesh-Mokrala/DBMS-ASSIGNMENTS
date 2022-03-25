@@ -1,0 +1,28 @@
+declare
+a int;
+b int;
+c int;
+procedure biggest(x IN int,y IN int,z OUT int) is
+begin
+if(x>y) then
+ z:=a;
+else
+ z:=b;
+end if;
+end;
+begin
+a:=&a;
+b:=&b;
+biggest(a,b,c);
+dbms_output.put_line('biggest of two numbers:'||c);
+end;
+
+Enter value for a: 10
+old  14: a:=&a;
+new  14: a:=10;
+Enter value for b: 5
+old  15: b:=&b;
+new  15: b:=5;
+biggest of two numbers:10
+
+PL/SQL procedure successfully completed.
