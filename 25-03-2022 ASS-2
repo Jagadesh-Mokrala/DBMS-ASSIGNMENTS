@@ -1,0 +1,32 @@
+declare
+a int;
+b int;
+c int;
+function maximum(x IN int,y IN int)
+return int
+is
+z int;
+begin
+if(x>y) then
+ z:=x;
+else
+ z:=y;
+return z;
+end if;
+end;
+begin
+a:=&a;
+b:=&b;
+c:=maximum(a,b);
+dbms_output.put_line('maximum of two numbers:'||c);
+end;
+
+Enter value for a: 10
+old  18: a:=&a;
+new  18: a:=10;
+Enter value for b: 20
+old  19: b:=&b;
+new  19: b:=20;
+maximum of two numbers:20
+
+PL/SQL procedure successfully completed.
